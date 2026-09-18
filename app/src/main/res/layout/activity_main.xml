@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingTop="32dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/tvEnterDigits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter 4 Digits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etDigitInput"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="NACA: 1234"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvEnterDigits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvEnterDigits"
+        app:layout_constraintTop_toTopOf="@id/tvEnterDigits" />
+
+    <TextView
+        android:id="@+id/tvEnterAngle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Enter Angle"
+        app:layout_constraintStart_toStartOf="@id/tvEnterDigits"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterDigits" />
+
+    <EditText
+        android:id="@+id/etAngleOfAttack"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Angle Of Attack"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvEnterAngle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvEnterAngle"
+        app:layout_constraintTop_toTopOf="@id/tvEnterAngle" />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Enter"
+        app:layout_constraintEnd_toStartOf="@id/btnLogResults"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etAngleOfAttack"
+        app:layout_constraintWidth_percent="0.28" />
+
+    <Button
+        android:id="@+id/btnLogResults"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Log Results"
+        app:layout_constraintEnd_toStartOf="@id/btnClear"
+        app:layout_constraintStart_toEndOf="@id/btnEnter"
+        app:layout_constraintTop_toBottomOf="@id/etAngleOfAttack"
+        app:layout_constraintWidth_percent="0.36" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnLogResults"
+        app:layout_constraintTop_toBottomOf="@id/etAngleOfAttack"
+        app:layout_constraintWidth_percent="0.28" />
+
+    <!-- Left result block -->
+    <TextView
+        android:id="@+id/Cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Coefficient of Lift"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEnter" />
+
+    <TextView
+        android:id="@+id/tvCl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="@id/Cl"
+        app:layout_constraintTop_toBottomOf="@id/Cl"
+        tools:text="0.776" />
+
+    <!-- Right result block -->
+    <TextView
+        android:id="@+id/alphazerolift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Zero Lift Angle"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEnter" />
+
+    <TextView
+        android:id="@+id/tvZeroLiftAngle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="@id/alphazerolift"
+        app:layout_constraintTop_toBottomOf="@id/alphazerolift"
+        tools:text="-0.036 rad" />
+
+    <Button
+        android:id="@+id/btnClearLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Clear Log"
+        app:layout_constraintEnd_toStartOf="@id/btnSelector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCl"
+        app:layout_constraintWidth_percent="0.48" />
+
+    <Button
+        android:id="@+id/btnSelector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Airfoil/Results Selector"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnClearLog"
+        app:layout_constraintTop_toBottomOf="@id/tvZeroLiftAngle"
+        app:layout_constraintWidth_percent="0.48" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnClearLog"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

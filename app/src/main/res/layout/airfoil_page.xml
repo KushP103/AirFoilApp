@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kushraj.airfoilappv1.ui.CamberLineView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camberLineView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/camber_view_background" />
